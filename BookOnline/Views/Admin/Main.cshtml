@@ -1,0 +1,24 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta name="viewport" content="width=device-width" />
+    <title>管理員登入</title>  
+    <script src="~/scripts/jquery-1.12.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#OKBtn").click(function () {
+                $("#form1").submit();
+            });
+        });
+    </script>
+</head>
+<body>    
+    <p style="text-align:center"><span style="font-weight:bold;font-size:20pt">管理員登入</span></p>
+    <form id="form1" action="@Url.Action("LoginValidProcess","Admin")" method="post">
+        @Html.Partial("LoginPane")
+        <input type="hidden" name="Url" value="@Request.QueryString["url"]" />
+    </form>
+</body>
+</html>

@@ -1,0 +1,219 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>加入會員</title>
+    <style>
+        #MainDiv {
+            width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #div1, #div2 {
+            width: 50%;
+            float: left;
+        }
+
+        table td {
+            padding: 10px;
+        }
+
+        #LastName, #FirstName {
+            width: 60px;
+        }
+
+        .Header {
+            font-weight: bold;
+            text-align: right;
+        }
+    </style>
+    <script src="~/scripts/jquery-1.12.4.min.js"></script>
+    <script>
+
+        var address;
+
+        $(document).ready(function () {
+
+            //Ajax載入Address.xml
+            $.get("/tools/Address.xml", null, LoadCounty, "xml");
+
+            //選擇縣市後要載入鄉鎮
+            $("#County").change(LoadRegion);
+
+            //載入驗證答案
+            $.get("/Tool/GetValidAns", null, function (xx) {
+                alert(xx);
+                $("#ValidAns").val(xx);
+            }, "text");
+
+            $("#form1").submit(CheckForm);
+
+            //更換驗證圖
+            $("#ChangeValidPicBtn").click(function () {
+                $("#ValidPic").attr("src", "/Tool/GetValidPic?tt=" + new Date().getTime());
+                //重新載入驗證答案
+                $.get("/Tool/GetValidAns?tt=" + new Date().getTime(), null, function (xx) {
+                    alert(xx);
+                    $("#ValidAns").val(xx);
+                }, "text");
+            });
+
+            //檢查帳號是否可用 
+            $("#Account").blur(function () {
+                var vv = $("#Account").val();
+                var pp = $.param({ "acct": vv });
+                $.get("/Tool/CheckAccountDuplicate", pp, function (xx) {
+                    if (xx == "y")
+                        $("#AccountStatus").text("帳號已被使用").css({ "color": "red" });
+                    else if (xx == "n")
+                        $("#AccountStatus").text("帳號可以使用").css({ "color": "blue" });
+                }, "text");
+            });
+
+        });
+
+        //載入縣市
+        function LoadCounty(xx) {
+            address = xx;
+            $(address).find("County").each(function () {
+                var vv = $(this).attr("Name");
+                var ss = "<option value='" + vv + "'>" + vv + "</option>";
+                $(ss).appendTo("#County");
+            });
+        }
+        //載入鄉鎮
+        function LoadRegion() {
+            $("#Region").empty();
+            $("<option>--請選擇--</option>").appendTo("#Region");
+
+            var cc = $("#County").val();
+            $(address).find("County[Name=\"" + cc + "\"]").children().each(function () {
+                var vv = $(this).attr("Name");
+                var ss = "<option value='" + vv + "'>" + vv + "</option>";
+                $(ss).appendTo("#Region");
+            });
+        }
+
+
+        //檢查表單
+        function CheckForm() {
+            msg = "";
+            var vv = $("#Account").val();
+            if (vv.length == 0)
+                msg += "* 請務必填寫會員帳號！\n";
+
+
+            if ($("#AccountStatus").text() == "帳號已被使用")
+                msg += "* 請另外申請帳號！\n";
+
+            if ($("#ValidAnsInputText").val().toLowerCase() != $("#ValidAns").val().toLowerCase())
+                msg += "* 驗證碼不正確！\n";
+
+            if (msg != "") {
+                alert(msg);
+                return false;
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <div id="MainDiv">
+        <h1>加入會員</h1>
+        <form id="form1" action="AddNewMemberProcess" method="post">
+            <div id="div1">
+                <table>
+                    <tr>
+                        <td class="Header">帳號：</td>
+                        <td>
+                            <input type="text" id="Account" name="Account" required="required" title="請輸入帳號" placeholder="請在此輸入帳號" />
+                            &nbsp;<span id="AccountStatus" style="font-weight: bold;"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="Header">密碼：</td>
+                        <td>
+                            <input type="password" id="Password" name="Password" required="required" title="請輸入密碼" /></td>
+                    </tr>
+                    <tr>
+                        <td class="Header">確認密碼：</td>
+                        <td>
+                            <input type="password" id="ConfirmPassword" name="ConfirmPassword" required="required" /></td>
+                    </tr>
+                    <tr>
+                        <td class="Header">姓名：</td>
+                        <td>
+                            <span class="Header">姓：</span><input type="text" id="LastName" name="LastName" />&nbsp;&nbsp;
+                        <span class="Header">名：</span><input type="text" id="FirstName" name="FirstName" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="Header">性別：</td>
+                        <td>
+                            <input type="radio" id="Sex_Male" name="Sex" value="1" />男生&nbsp;&nbsp;
+                        <input type="radio" id="Sex_Female" name="Sex" value="0" />女生
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="Header">生日：</td>
+                        <td>
+                            <input type="date" id="Birth" name="Birth" /></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="div2">
+                <table>
+                    <tr>
+                        <td class="Header">住址：</td>
+                        <td>
+                            <p>
+                                <span class="Header">縣市：</span><select id="County" name="County">
+                                    <option>--請選擇--</option>
+                                </select>&nbsp;&nbsp;
+                        <span class="Header">鄉鎮：</span><select id="Region" name="Region">
+                            <option>--請選擇--</option>
+                        </select>
+                            </p>
+                            <span class="Header">地址：</span><input type="text" id="Address" name="Address" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="Header">教育程度：</td>
+                        <td>
+                            <select id="Edu" name="Edu">
+                                <option>--請選擇--</option>
+                                <option value="1">國小</option>
+                                <option value="2">國中</option>
+                                <option value="3">高中職</option>
+                                <option value="4">大專</option>
+                                <option value="5">研究所</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="Header">電子郵件：</td>
+                        <td>
+                            <input type="email" required="required" id="Email" name="Email" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="Header">驗證碼：</td>
+                        <td>
+                            <img id="ValidPic" src="~/Tool/GetValidPic" /><br />
+                            <input type="text" required="required" id="ValidAnsInputText" />&nbsp;
+                        <input type="button" id="ChangeValidPicBtn" value="更換驗證圖" />
+                            <input type="hidden" id="ValidAns" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <p>
+                <input type="submit" value="加入會員" />&nbsp;
+            <input type="reset" value="重新填寫" />
+            </p>
+        </form>
+    </div>
+</body>
+</html>

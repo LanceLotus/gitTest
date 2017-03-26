@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta name="viewport" content="width=device-width" />
+    <title>取得新密碼</title>
+    <script src="~/scripts/jquery-1.12.4.min.js"></script>
+    <style>
+        #MainTable {
+            width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+            #MainTable td {
+                padding: 10px;
+            }
+
+        .Header {
+            font-weight: bold;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <table id="MainTable">
+        <tr>
+            <td class="Header">您的新密碼如下：</td>
+            <td>
+                <div style="color: red; font-weight: bold" id="ErrMsg">@ViewData["NewPWD"]</div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>@Html.ActionLink("返回首頁", "Index", "Home")</span>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <p style="text-align:center">請返回首頁後登入進入會員專區修改密碼即可</p>
+</body>
+</html>

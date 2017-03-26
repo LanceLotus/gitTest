@@ -1,0 +1,151 @@
+﻿@{
+    ViewBag.Title = "Book";
+    Layout = "~/Views/Shared/MainLogin_layout.cshtml";
+}
+
+@model BookOnline.Models.BookInfo
+
+<h1>Book管理</h1>
+@section CustomScript{
+    <script>
+        function get(id) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (xhttp.readyState == 4 && xhttp.status == 200) {
+                    var json = xhttp.responseText.trim();
+                    console.log(json);
+                    var obj = JSON.parse(json);
+                    document.getElementById("id").value = obj.Id;
+                    document.getElementById("title").value = obj.Title;
+                    document.getElementById("author").value = obj.Author;
+                    document.getElementById("price").value = obj.Price;
+                }
+            };
+
+            xhttp.open("GET", "/Book/Get?id=" + id, true);
+            xhttp.send();
+        }
+
+        function insert() {
+            confirm("是否新增此筆資料?");
+            query();
+            
+        }
+
+        function update() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (xhttp.readyState == 4 && xhttp.status == 200) {
+                    var message = xhttp.responseText.trim();
+                    query();
+                }
+            };
+
+            var id = document.getElementById("id").value;
+            var title = document.getElementById("title").value;
+            var author = document.getElementById("author").value;
+            var price = document.getElementById("price").value;
+
+            xhttp.open("POST", "/Book/Update", true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send("id=" + id + "&title=" + title + "&author=" + author + "&price=" + price);
+        }
+
+        function del() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (xhttp.readyState == 4 && xhttp.status == 200) {
+                    var message = xhttp.responseText.trim();
+                    //alert(message);
+                    query();
+                }
+            };
+
+            var id = document.getElementById("id").value;
+            xhttp.open("POST", "/Book/Delete", true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send("id=" + id);
+        }
+
+        function query() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (xhttp.readyState == 4 && xhttp.status == 200) {
+                    var jsonArray = xhttp.responseText.trim();
+                    console.log(jsonArray);
+                    var objArray = JSON.parse(jsonArray);
+
+                    // 在<tbody>動態產生表格列<tr>
+                    var tbody = document.getElementById('myTable').getElementsByTagName('tbody')[0];
+
+                    // 清除所有資料列 <tr>
+                    var tableRows = tbody.getElementsByTagName('tr');
+                    var rowCount = tableRows.length;
+                    for (var x = rowCount - 1; x >= 0; x--) {
+                        tbody.removeChild(tableRows[x]);
+                    }
+
+                    // 新增資料列 <tr>
+                    for (var i = 0; i < objArray.length; i++) {
+                        var newRow = tbody.insertRow(tbody.rows.length);
+                        newRow.insertCell(0).appendChild(document.createTextNode(objArray[i].Id));
+                        newRow.insertCell(1).appendChild(document.createTextNode(objArray[i].Title));
+                        newRow.insertCell(2).appendChild(document.createTextNode(objArray[i].Author));
+                        newRow.insertCell(3).appendChild(document.createTextNode(objArray[i].Price));
+                        newRow.insertCell(4).appendChild(document.createTextNode(objArray[i].Times));
+                        // 修改 button
+                        var addRowUpdateBtn = document.createElement("input");
+                        addRowUpdateBtn.setAttribute("type", "button");
+                        addRowUpdateBtn.setAttribute("value", "請選擇");
+                        addRowUpdateBtn.setAttribute("onclick", "get(" + objArray[i].Id + ");");
+                        addRowUpdateBtn.setAttribute("class", "pure-form");
+                        newRow.insertCell(5).appendChild(addRowUpdateBtn);
+                    }
+                }
+            };
+            xhttp.open("GET", "/Book/Query", true);
+            xhttp.send();
+        }
+    </script>
+}
+@section CustomStyle{
+    <style>
+        .body {
+            padding: 10px;
+        }
+    </style>
+}
+<form class="pure-form" action="/Book/Insert" method="post" enctype="multipart/form-data">
+    <fieldset>
+        <legend>Book:</legend>
+        <input id="id" name="id" type="text" value="0" placeholder="" readonly="readonly"><p>
+            <input id="title" name="title" type="text" value="Android" placeholder="請輸入書名">
+        <p>
+            <input id="author" name="author" type="text" value="Vincent" placeholder="請輸入作者">
+        <p>
+            <input id="price" name="price" value="880" type="text" placeholder="請輸入價格">
+        <p>
+            <input type="file" id="pic" name="pic" value="請選擇圖片" />
+        <p>
+        <p>
+            <button type="button" onclick="query()" class="pure-button pure-button-primary">查詢</button>
+            <button type="submit" onclick="insert()" class="pure-button pure-button-primary">新增</button>
+            <button type="button" onclick="update()" class="pure-button pure-button-primary">修改</button>
+            <button type="button" onclick="del()" class="pure-button pure-button-primary">刪除</button>
+    </fieldset>
+</form>
+
+<table id="myTable" class="pure-table pure-table-bordered" style="width: 90%">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>書名</th>
+            <th>作者</th>
+            <th>價格</th>
+            <th>時間</th>
+            <th>選擇項目</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>

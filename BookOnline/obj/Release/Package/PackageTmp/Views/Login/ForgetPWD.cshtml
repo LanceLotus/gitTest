@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta name="viewport" content="width=device-width" />
+    <title>會員登入</title>
+    <script src="~/scripts/jquery-1.12.4.min.js"></script>
+    <style>
+        #MainTable {
+            width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+            #MainTable td {
+                padding: 10px;
+            }
+
+        .Header {
+            font-weight: bold;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" action="/Tool/GetPassWord" method="post" >
+        <table id="MainTable">
+            <tr>
+                <td class="Header">帳號：</td>
+                <td>
+                    <input type="text" id="Account" name="Account" required="required" placeholder="請輸入帳號" /></td>
+            </tr>
+            <tr>
+                <td class="Header">信箱：</td>
+                <td>
+                    <input type="text" id="Email" name="Email" required="required" placeholder="請輸入信箱" /></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center">
+                    <div style="color: red; font-weight: bold" id="ErrMsg">@ViewData["ErrMsg"]</div>
+                    <input id="OKBtn" type="submit" value="取得新密碼" style="width: 100px; height: 30px;" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

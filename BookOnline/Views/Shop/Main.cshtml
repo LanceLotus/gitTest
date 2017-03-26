@@ -1,0 +1,106 @@
+﻿@{
+    ViewBag.Title = "購物商城";
+    Layout = "~/Views/Shared/MainLogin_layout.cshtml";
+}
+@model List<BookOnline.Models.BookInfo>
+
+@section CustomStyle
+{
+    <style>
+        #ResultList {
+            width: 100%;
+        }
+
+            #ResultList table {
+                width: 100%;
+            }
+
+            #ResultList td {
+                padding: 10px;
+            }
+
+        .Title {
+            font-weight: bold;
+            font-size: 16pt;
+        }
+
+        .Header {
+            text-align: right;
+            font-weight: bold;
+        }
+
+        #CartInfo {
+            background-image: url("/images/shops/shopping_bag.png");
+            width: 128px;
+            height: 128px;
+            position: fixed;
+            right: 50px;
+            bottom: 30px;
+            display: none;
+        }
+    </style>
+}
+
+@section CustomScript
+{
+    <script>
+        $(document).ready(function () {
+            $(".ProductPic").click(function () {
+                var vv = $(this).attr("pid");
+                $.get("@Url.Action("AddToCart", "Shop")" + "?pid=" + vv, null, function (xx) {
+                    $("#CartInfo").html(xx).css("cursor", "pointer").show();
+                }, "text");
+            });
+
+            $("#CartInfo").click(function () {
+                document.location = "@Url.Action("ShoppingCart", "Shop")";
+            });
+
+        });
+    </script>
+}
+
+<h1>購物商城首頁</h1>
+@ViewData["Total"]
+<table id="ResultList">
+    @foreach (var item in Model)
+    { 
+        <tr>
+            <td style="width: 150px; text-align: center">
+                <img src="@Url.Action("GetBookImage", "Tool", new { pid = item.Id })" title="@item.Title" /></td>
+            <td>
+                <table>
+                    <tr>
+                        <td colspan="4" class="Title">@item.Title</td>
+                    </tr>
+                    <tr>
+                        <td class="Header">書籍編號：</td>
+                        <td>@item.Id</td>
+                        <td class="Header">單價：</td>
+                        <td>@item.Price</td>
+                    </tr>
+                    <tr>
+                        <td class="Header">書本名稱：</td>
+                        <td>@item.Title</td>
+                        <td class="Header">作者：</td>
+                        <td>@item.Author</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <img src="~/images/shops/cart_add.png" title="加入購物車" class="ProductPic" pid="@item.Id" />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="font-size: 10pt; color: darkgray; text-align: center;">..................................................................................................................................................................................................................
+            </td>
+        </tr>
+    }
+</table>
+<p style="text-align: center;">@Html.Raw(ViewData["PageLink"])</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div id="CartInfo"></div>
+

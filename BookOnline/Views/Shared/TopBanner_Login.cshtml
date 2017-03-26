@@ -1,0 +1,31 @@
+﻿<div style="width:100%">
+    <div style="width:300px;display:inline;"><img src="~/images/logo.png" /></div>
+    <div style="width:200px;float:right;">
+        <p style="text-align:right;">
+            @if(Session["LoginName"]==null)
+            {
+                <script src="~/scripts/jquery-1.12.4.min.js"></script>
+                <script src="~/scripts/LoginLightBox.js"></script>
+                <script>
+                    $(document).ready(function () {                        
+                        $("#LoginSpan").click(function () {
+                            $.get("@Url.Action("GetLoginPane","Tool")", null, ShowLightBox, "html");
+                        });
+                    });
+                </script>
+                <span id="LoginSpan" style="text-decoration:underline;color:blue;cursor:pointer">登入</span>@:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            }
+            else
+            {
+                <script>
+                    $(document).ready(function () {
+                        $("#LogoutSpan").click(function () {
+                            document.location = "@Url.Action("Logout","Login")";
+                        });
+                    });
+                </script>
+                @Session["LoginName"]@:&nbsp;&nbsp;<span id="LogoutSpan" style="text-decoration:underline;color:blue;cursor:pointer">登出</span>
+            }
+        </p>
+    </div>
+</div>

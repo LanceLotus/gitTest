@@ -1,0 +1,428 @@
+<Address>
+  <County Name="新北市">
+    <Region Name="八里區" Code="249" />
+    <Region Name="三芝區" Code="252" />
+    <Region Name="三重區" Code="241" />
+    <Region Name="三峽區" Code="237" />
+    <Region Name="土城區" Code="236" />
+    <Region Name="中和區" Code="235" />
+    <Region Name="五股區" Code="248" />
+    <Region Name="平溪區" Code="226" />
+    <Region Name="永和區" Code="234" />
+    <Region Name="石門區" Code="253" />
+    <Region Name="石碇區" Code="223" />
+    <Region Name="汐止區" Code="221" />
+    <Region Name="坪林區" Code="232" />
+    <Region Name="林口區" Code="244" />
+    <Region Name="板橋區" Code="220" />
+    <Region Name="金山區" Code="208" />
+    <Region Name="泰山區" Code="243" />
+    <Region Name="烏來區" Code="233" />
+    <Region Name="貢寮區" Code="228" />
+    <Region Name="淡水區" Code="251" />
+    <Region Name="深坑區" Code="222" />
+    <Region Name="新店區" Code="231" />
+    <Region Name="新莊區" Code="242" />
+    <Region Name="五股區" Code="248" />
+    <Region Name="瑞芳區" Code="224" />
+    <Region Name="萬里區" Code="207" />
+    <Region Name="樹林區" Code="238" />
+    <Region Name="雙溪區" Code="227" />
+    <Region Name="蘆洲區" Code="247" />
+    <Region Name="鶯歌區" Code="239" />
+  </County>
+  <County Name="嘉義縣">
+    <Region Name="大林鎮" Code="622" />
+    <Region Name="大埔鄉" Code="607" />
+    <Region Name="中埔鄉" Code="606" />
+    <Region Name="六腳鄉" Code="615" />
+    <Region Name="太保市" Code="612" />
+    <Region Name="水上鄉" Code="608" />
+    <Region Name="布袋鎮" Code="625" />
+    <Region Name="民雄鄉" Code="621" />
+    <Region Name="朴子市" Code="613" />
+    <Region Name="竹崎鄉" Code="604" />
+    <Region Name="東石鄉" Code="614" />
+    <Region Name="阿里山鄉" Code="605" />
+    <Region Name="梅山鄉" Code="603" />
+    <Region Name="鹿草鄉" Code="611" />
+    <Region Name="番路鄉" Code="602" />
+    <Region Name="新港鄉" Code="616" />
+    <Region Name="溪口鄉" Code="623" />
+    <Region Name="義竹鄉" Code="624" />
+  </County>
+  <County Name="嘉義市">
+    <Region Name="西區" Code="600" />
+    <Region Name="東區" Code="600" />
+  </County>
+  <County Name="南海島">
+    <Region Name="東沙群島" Code="817" />
+    <Region Name="南沙群島" Code="819" />
+  </County>
+  <County Name="澎湖縣">
+    <Region Name="七美鄉" Code="883" />
+    <Region Name="白沙鄉" Code="884" />
+    <Region Name="西嶼鄉" Code="881" />
+    <Region Name="馬公市" Code="880" />
+    <Region Name="望安鄉" Code="882" />
+    <Region Name="湖西鄉" Code="885" />
+  </County>
+  <County Name="釣魚台">
+    <Region Name="釣魚台" Code="290" />
+  </County>
+  <County Name="金門縣">
+    <Region Name="金沙鎮" Code="890" />
+    <Region Name="金城鎮" Code="893" />
+    <Region Name="金湖鎮" Code="891" />
+    <Region Name="金寧鄉" Code="892" />
+    <Region Name="烈嶼鄉" Code="894" />
+    <Region Name="烏坵鄉" Code="896" />
+  </County>
+  <County Name="新竹縣">
+    <Region Name="五峰鄉" Code="311" />
+    <Region Name="北埔鄉" Code="314" />
+    <Region Name="尖石鄉" Code="313" />
+    <Region Name="竹北市" Code="302" />
+    <Region Name="竹東鎮" Code="310" />
+    <Region Name="芎林鄉" Code="307" />
+    <Region Name="峨眉鄉" Code="315" />
+    <Region Name="湖口鄉" Code="303" />
+    <Region Name="新埔鎮" Code="305" />
+    <Region Name="新豐鄉" Code="304" />
+    <Region Name="橫山鄉" Code="312" />
+    <Region Name="關西鎮" Code="306" />    
+    <Region Name="寶山鄉" Code="308" />
+  </County>
+  <County Name="台中市">
+    <Region Name="大甲區" Code="437" />
+    <Region Name="大安區" Code="439" />
+    <Region Name="大肚區" Code="432" />
+    <Region Name="大里區" Code="412" />
+    <Region Name="大雅區" Code="428" />
+    <Region Name="中區" Code="400" />
+    <Region Name="太平區" Code="411" />
+    <Region Name="北屯區" Code="406" />
+    <Region Name="北區" Code="404" />
+    <Region Name="外埔區" Code="438" />
+    <Region Name="石岡區" Code="422" />
+    <Region Name="后里區" Code="421" />
+    <Region Name="西屯區" Code="407" />
+    <Region Name="西區" Code="403" />
+    <Region Name="沙鹿區" Code="433" />
+    <Region Name="和平區" Code="424" />
+    <Region Name="東區" Code="401" />
+    <Region Name="東勢區" Code="423" />
+    <Region Name="南屯區" Code="408" />
+    <Region Name="南區" Code="402" />
+    <Region Name="烏日區" Code="414" />
+    <Region Name="神岡區" Code="429" />
+    <Region Name="梧棲區" Code="435" />
+    <Region Name="清水區" Code="436" />
+    <Region Name="新社區" Code="426" />
+    <Region Name="潭子區" Code="427" />
+    <Region Name="龍井區" Code="433" />
+    <Region Name="龍井區" Code="434" />
+    <Region Name="豐原區" Code="420" />
+    <Region Name="霧峰區" Code="413" />
+  </County>
+  <County Name="新竹市">
+    <Region Name="北區" Code="300" />
+    <Region Name="東區" Code="300" />
+    <Region Name="香山區" Code="300" />
+  </County>
+  <County Name="花蓮縣">
+    <Region Name="玉里鎮" Code="981" />
+    <Region Name="光復鄉" Code="976" />
+    <Region Name="吉安鄉" Code="973" />
+    <Region Name="秀林鄉" Code="972" />
+    <Region Name="卓溪鄉" Code="982" />
+    <Region Name="花蓮市" Code="970" />
+    <Region Name="富里鄉" Code="983" />
+    <Region Name="新城鄉" Code="971" />
+    <Region Name="瑞穗鄉" Code="978" />
+    <Region Name="萬榮鄉" Code="979" />
+    <Region Name="壽豐鄉" Code="974" />
+    <Region Name="鳳林鎮" Code="975" />
+    <Region Name="豐濱鄉" Code="977" />
+  </County>
+  <County Name="高雄市">
+    <Region Name="三民區" Code="807" />
+    <Region Name="大社區" Code="815" />
+    <Region Name="大寮區" Code="831" />
+    <Region Name="大樹區" Code="840" />
+    <Region Name="小港區" Code="812" />
+    <Region Name="仁武區" Code="814" />
+    <Region Name="內門區" Code="845" />
+    <Region Name="六龜區" Code="844" />
+    <Region Name="左營區" Code="813" />
+    <Region Name="永安區" Code="828" />
+    <Region Name="田寮區" Code="823" />
+    <Region Name="甲仙區" Code="847" />
+    <Region Name="杉林區" Code="846" />
+    <Region Name="那瑪夏區" Code="849" />
+    <Region Name="岡山區" Code="820" />
+    <Region Name="東沙群島" Code="817" />
+    <Region Name="林園區" Code="832" />
+    <Region Name="阿蓮區" Code="822" />
+    <Region Name="前金區" Code="801" />
+    <Region Name="前鎮區" Code="806" />
+    <Region Name="南沙群島" Code="819" />
+    <Region Name="美濃區" Code="843" />
+    <Region Name="茄萣區" Code="852" />
+    <Region Name="茂林區" Code="851" />
+    <Region Name="苓雅區" Code="802" />
+    <Region Name="桃源區" Code="848" />
+    <Region Name="梓官區" Code="826" />
+    <Region Name="鳥松區" Code="833" />
+    <Region Name="湖內區" Code="829" />
+    <Region Name="新興區" Code="800" />
+    <Region Name="楠梓區" Code="811" />
+    <Region Name="路竹區" Code="821" />
+    <Region Name="鼓山區" Code="804" />
+    <Region Name="旗山區" Code="842" />
+    <Region Name="旗津區" Code="805" />
+    <Region Name="鳳山區" Code="830" />
+    <Region Name="橋頭區" Code="825" />
+    <Region Name="燕巢區" Code="824" />
+    <Region Name="彌陀區" Code="827" />
+    <Region Name="鹽埕區" Code="803" />
+  </County>
+  <County Name="基隆市">
+    <Region Name="七堵區" Code="206" />
+    <Region Name="中山區" Code="203" />
+    <Region Name="中正區" Code="202" />
+    <Region Name="仁愛區" Code="200" />
+    <Region Name="安樂區" Code="204" />
+    <Region Name="信義區" Code="201" />
+    <Region Name="暖暖區" Code="205" />
+  </County>
+  <County Name="宜蘭縣">
+    <Region Name="三星鄉" Code="266" />
+    <Region Name="大同鄉" Code="267" />
+    <Region Name="五結鄉" Code="268" />
+    <Region Name="冬山鄉" Code="269" />
+    <Region Name="壯圍鄉" Code="260" />
+    <Region Name="壯圍鄉" Code="263" />
+    <Region Name="宜蘭市" Code="260" />
+    <Region Name="南澳鄉" Code="272" />
+    <Region Name="員山鄉" Code="264" />
+    <Region Name="釣魚台" Code="290" />
+    <Region Name="頭城鎮" Code="261" />
+    <Region Name="礁溪鄉" Code="262" />
+    <Region Name="羅東鎮" Code="265" />
+    <Region Name="蘇澳鎮" Code="270" />
+  </County>
+  <County Name="台北市">
+    <Region Name="士林區" Code="111" />
+    <Region Name="大同區" Code="103" />
+    <Region Name="大安區" Code="106" />
+    <Region Name="中山區" Code="104" />
+    <Region Name="中正區" Code="100" />
+    <Region Name="內湖區" Code="114" />
+    <Region Name="文山區" Code="116" />
+    <Region Name="北投區" Code="112" />
+    <Region Name="松山區" Code="105" />
+    <Region Name="信義區" Code="110" />
+    <Region Name="南港區" Code="115" />
+    <Region Name="萬華區" Code="108" />
+  </County>
+  <County Name="南投縣">
+    <Region Name="中寮鄉" Code="541" />
+    <Region Name="仁愛鄉" Code="546" />
+    <Region Name="水里鄉" Code="553" />
+    <Region Name="名間鄉" Code="551" />
+    <Region Name="竹山鎮" Code="557" />
+    <Region Name="信義鄉" Code="556" />
+    <Region Name="南投市" Code="540" />
+    <Region Name="埔里鎮" Code="545" />
+    <Region Name="草屯鎮" Code="542" />
+    <Region Name="國姓鄉" Code="544" />
+    <Region Name="魚池鄉" Code="555" />
+    <Region Name="鹿谷鄉" Code="558" />
+    <Region Name="集集鎮" Code="552" />
+  </County>
+  <County Name="苗栗縣">
+    <Region Name="三義鄉" Code="367" />
+    <Region Name="三灣鄉" Code="352" />
+    <Region Name="大湖鄉" Code="364" />
+    <Region Name="公館鄉" Code="363" />
+    <Region Name="竹南鎮" Code="350" />
+    <Region Name="西湖鄉" Code="368" />
+    <Region Name="卓蘭鎮" Code="369" />
+    <Region Name="南庄鄉" Code="353" />
+    <Region Name="後龍鎮" Code="356" />
+    <Region Name="苗栗市" Code="360" />
+    <Region Name="苑裡鎮" Code="358" />
+    <Region Name="泰安鄉" Code="365" />
+    <Region Name="通霄鎮" Code="357" />
+    <Region Name="造橋鄉" Code="361" />
+    <Region Name="獅潭鄉" Code="354" />
+    <Region Name="銅鑼鄉" Code="366" />
+    <Region Name="頭份鎮" Code="351" />
+    <Region Name="頭屋鄉" Code="362" />
+  </County>
+  <County Name="桃園縣">
+    <Region Name="八德市" Code="334" />
+    <Region Name="大園鄉" Code="337" />
+    <Region Name="大溪鎮" Code="335" />
+    <Region Name="中壢市" Code="320" />
+    <Region Name="平鎮市" Code="324" />
+    <Region Name="桃園市" Code="330" />
+    <Region Name="復興鄉" Code="336" />
+    <Region Name="新屋鄉" Code="327" />
+    <Region Name="楊梅市" Code="326" />
+    <Region Name="龍潭鄉" Code="325" />
+    <Region Name="龜山鄉" Code="333" />
+    <Region Name="蘆竹鄉" Code="338" />
+    <Region Name="觀音鄉" Code="328" />
+  </County>
+  <County Name="雲林縣">
+    <Region Name="二崙鄉" Code="649" />
+    <Region Name="口湖鄉" Code="653" />
+    <Region Name="土庫鎮" Code="633" />
+    <Region Name="大埤鄉" Code="631" />
+    <Region Name="元長鄉" Code="655" />
+    <Region Name="斗六市" Code="640" />
+    <Region Name="斗南鎮" Code="630" />
+    <Region Name="水林鄉" Code="652" />
+    <Region Name="北港鎮" Code="651" />
+    <Region Name="古坑鄉" Code="646" />
+    <Region Name="台西鄉" Code="636" />
+    <Region Name="四湖鄉" Code="654" />
+    <Region Name="西螺鎮" Code="648" />
+    <Region Name="東勢鄉" Code="635" />
+    <Region Name="林內鄉" Code="643" />
+    <Region Name="虎尾鎮" Code="632" />
+    <Region Name="崙背鄉" Code="637" />
+    <Region Name="麥寮鄉" Code="638" />
+    <Region Name="莿桐鄉" Code="647" />
+    <Region Name="褒忠鄉" Code="634" />
+  </County>
+  <County Name="連江縣">
+    <Region Name="北竿鄉" Code="210" />
+    <Region Name="東引鄉" Code="212" />
+    <Region Name="南竿鄉" Code="209" />
+    <Region Name="莒光鄉" Code="211" />
+  </County>
+  <County Name="彰化縣">
+    <Region Name="二水鄉" Code="530" />
+    <Region Name="二林鎮" Code="526" />
+    <Region Name="大村鄉" Code="515" />
+    <Region Name="大城鄉" Code="527" />
+    <Region Name="北斗鎮" Code="521" />
+    <Region Name="永靖鄉" Code="512" />
+    <Region Name="田中鎮" Code="520" />
+    <Region Name="田尾鄉" Code="522" />
+    <Region Name="竹塘鄉" Code="525" />
+    <Region Name="伸港鄉" Code="509" />
+    <Region Name="秀水鄉" Code="504" />
+    <Region Name="和美鎮" Code="508" />
+    <Region Name="社頭鄉" Code="511" />
+    <Region Name="芳苑鄉" Code="528" />
+    <Region Name="花壇鄉" Code="503" />
+    <Region Name="芬園鄉" Code="502" />
+    <Region Name="員林鎮" Code="510" />
+    <Region Name="埔心鄉" Code="513" />
+    <Region Name="埔鹽鄉" Code="516" />
+    <Region Name="埤頭鄉" Code="523" />
+    <Region Name="鹿港鎮" Code="505" />
+    <Region Name="溪州鄉" Code="524" />
+    <Region Name="溪湖鎮" Code="514" />
+    <Region Name="彰化市" Code="500" />
+    <Region Name="福興鄉" Code="506" />
+    <Region Name="線西鄉" Code="507" />
+  </County>
+  <County Name="台東縣">
+    <Region Name="大武鄉" Code="965" />
+    <Region Name="太麻里鄉" Code="963" />
+    <Region Name="台東市" Code="950" />
+    <Region Name="成功鎮" Code="961" />
+    <Region Name="池上鄉" Code="958" />
+    <Region Name="卑南鄉" Code="954" />
+    <Region Name="延平鄉" Code="953" />
+    <Region Name="東河鄉" Code="959" />
+    <Region Name="金峰鄉" Code="964" />
+    <Region Name="長濱鄉" Code="962" />
+    <Region Name="海端鄉" Code="957" />
+    <Region Name="鹿野鄉" Code="955" />
+    <Region Name="達仁鄉" Code="966" />
+    <Region Name="綠島鄉" Code="951" />
+    <Region Name="關山鎮" Code="956" />
+    <Region Name="蘭嶼鄉" Code="952" />
+  </County>
+  <County Name="屏東縣">
+    <Region Name="九如鄉" Code="904" />
+    <Region Name="三地門鄉" Code="901" />
+    <Region Name="內埔鄉" Code="912" />
+    <Region Name="竹田鄉" Code="911" />
+    <Region Name="牡丹鄉" Code="945" />
+    <Region Name="車城鄉" Code="944" />
+    <Region Name="里港鄉" Code="905" />
+    <Region Name="佳冬鄉" Code="931" />
+    <Region Name="來義鄉" Code="922" />
+    <Region Name="枋山鄉" Code="941" />
+    <Region Name="枋寮鄉" Code="940" />
+    <Region Name="東港鎮" Code="928" />
+    <Region Name="林邊鄉" Code="927" />
+    <Region Name="長治鄉" Code="908" />
+    <Region Name="南州鄉" Code="926" />
+    <Region Name="屏東市" Code="900" />
+    <Region Name="恆春鎮" Code="946" />
+    <Region Name="春日鄉" Code="942" />
+    <Region Name="崁頂鄉" Code="924" />
+    <Region Name="泰武鄉" Code="921" />
+    <Region Name="琉球鄉" Code="929" />
+    <Region Name="高樹鄉" Code="906" />
+    <Region Name="新埤鄉" Code="925" />
+    <Region Name="新園鄉" Code="932" />
+    <Region Name="獅子鄉" Code="943" />
+    <Region Name="萬丹鄉" Code="913" />
+    <Region Name="萬巒鄉" Code="923" />
+    <Region Name="滿州鄉" Code="947" />
+    <Region Name="瑪家鄉" Code="903" />
+    <Region Name="潮州鎮" Code="920" />
+    <Region Name="霧台鄉" Code="902" />
+    <Region Name="麟洛鄉" Code="909" />
+    <Region Name="鹽埔鄉" Code="907" />
+  </County>
+  <County Name="台南市">
+    <Region Name="七股區" Code="724" />
+    <Region Name="下營區" Code="735" />
+    <Region Name="大內區" Code="742" />
+    <Region Name="山上區" Code="743" />
+    <Region Name="中西區" Code="700" />
+    <Region Name="仁德區" Code="717" />
+    <Region Name="六甲區" Code="734" />
+    <Region Name="北門區" Code="727" />
+    <Region Name="北區" Code="704" />
+    <Region Name="左鎮區" Code="713" />
+    <Region Name="永康區" Code="710" />
+    <Region Name="玉井區" Code="714" />
+    <Region Name="白河區" Code="732" />
+    <Region Name="安平區" Code="708" />
+    <Region Name="安定區" Code="745" />
+    <Region Name="安南區" Code="709" />
+    <Region Name="西港區" Code="723" />
+    <Region Name="佳里區" Code="722" />
+    <Region Name="官田區" Code="720" />
+    <Region Name="東山區" Code="733" />
+    <Region Name="東區" Code="701" />
+    <Region Name="南化區" Code="716" />
+    <Region Name="南區" Code="702" />
+    <Region Name="後壁區" Code="731" />
+    <Region Name="柳營區" Code="736" />
+    <Region Name="將軍區" Code="725" />
+    <Region Name="麻豆區" Code="721" />
+    <Region Name="善化區" Code="741" />
+    <Region Name="新化區" Code="712" />
+    <Region Name="新市區" Code="741" />
+    <Region Name="新市區" Code="744" />
+    <Region Name="新營區" Code="730" />
+    <Region Name="楠西區" Code="715" />
+    <Region Name="學甲區" Code="726" />
+    <Region Name="龍崎區" Code="719" />
+    <Region Name="歸仁區" Code="711" />
+    <Region Name="關廟區" Code="718" />
+    <Region Name="鹽水區" Code="737" />
+  </County>
+</Address>

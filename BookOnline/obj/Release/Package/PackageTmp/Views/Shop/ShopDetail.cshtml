@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "結帳明細";
+    Layout = "~/Views/Shared/MainLogin_layout.cshtml";
+}
+
+@model HashSet<BookOnline.Models.CheckOut>
+
+<h2>結帳明細</h2>
+
+<table>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>訂單編號：</td>
+            <td>@item.ProductId</td>
+        </tr>
+        <tr>
+            <td>金額：</td>
+            <td>@item.Total</td>
+        </tr>
+        <tr>
+            <td>訂單時間：</td>
+            <td>@item.DataTime</td>
+        </tr>
+    }
+</table>

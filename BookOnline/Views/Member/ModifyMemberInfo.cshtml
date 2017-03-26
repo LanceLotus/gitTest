@@ -1,0 +1,175 @@
+﻿
+@model BookOnline.Models.MemberInfo
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>修改會員資料</title>
+    <style>
+        #MainDiv {
+            width:900px;
+            margin-left:auto;
+            margin-right:auto;            
+        }
+        #div1,#div2 {
+            width:50%;            
+            float:left;
+        }        
+        table td {
+            padding:10px;
+        }
+        #LastName, #FirstName {
+            width:60px;
+        }
+        .Header {
+            font-weight:bold;
+            text-align:right;
+        }
+    </style>
+    <script src="~/scripts/jquery-1.12.4.min.js"></script>
+    <script>
+
+        var address;
+
+        $(document).ready(function () {
+
+            //Ajax載入Address.xml
+            $.get("/tools/Address.xml", null, LoadCounty, "xml");
+
+            //選擇縣市後要載入鄉鎮
+            $("#County").change(LoadRegion);
+
+            $("#form1").submit(CheckForm);
+
+        });
+
+        //載入縣市
+        function LoadCounty(xx) {
+            address = xx;
+            $(address).find("County").each(function () {
+                var vv = $(this).attr("Name");
+                if (vv == "@Model.County")
+                    var ss = "<option value='" + vv + "' selected='selected'>" + vv + "</option>";
+                else
+                    var ss = "<option value='" + vv + "'>" + vv + "</option>";
+                $(ss).appendTo("#County");
+
+                LoadRegion();   //在第一次載入縣市時，就要先將鄉鎮跟著載入
+            });
+        }
+        //載入鄉鎮
+        function LoadRegion() {
+            $("#Region").empty();
+            $("<option>--請選擇--</option>").appendTo("#Region");
+
+            var cc = $("#County").val();
+            $(address).find("County[Name=\"" + cc + "\"]").children().each(function () {
+                var vv = $(this).attr("Name");
+                if (vv == "@Model.Region")
+                    var ss = "<option value='" + vv + "' selected='selected'>" + vv + "</option>";
+                else
+                    var ss = "<option value='" + vv + "'>" + vv + "</option>";
+                $(ss).appendTo("#Region");
+            });
+        }
+
+
+        //檢查表單
+        function CheckForm() {
+
+            if (!confirm("是否確定修改會員資料？"))
+                return false;
+
+            msg = "";
+            /*
+            var vv = $("#Account").val();
+            if (vv.length == 0)
+                msg += "* 請務必填寫會員帳號！\n";
+            */
+            if (msg != "") {
+                alert(msg);
+                return false;
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <div id="MainDiv">  
+        <h1>修改會員資料</h1>
+        <form id="form1" action="UpdateMemberProcess" method="post">
+        <div id="div1">
+            <table>
+                <tr>
+                    <td class="Header">帳號：</td>
+                    <td><span id="Account">@Model.Account</span></td>
+                </tr>
+                <tr>
+                    <td class="Header">密碼：</td>
+                    <td><input type="password" id="Password" name="Password" required="required" title="請輸入密碼" /></td>
+                </tr>
+                <tr>
+                    <td class="Header">確認密碼：</td>
+                    <td><input type="password" id="ConfirmPassword" name="ConfirmPassword" required="required" /></td>
+                </tr>
+                <tr>
+                    <td class="Header">姓名：</td>
+                    <td>
+                        <span class="Header">姓：</span><input type="text" id="LastName" name="LastName" value="@Model.LastName" />&nbsp;&nbsp;
+                        <span class="Header">名：</span><input type="text" id="FirstName" name="FirstName" value="@Model.FirstName" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="Header">性別：</td>
+                    <td>
+                        <input type="radio" id="Sex_Male" name="Sex" value="1" @(Model.Sex==1?"checked='checked'":"") />男生&nbsp;&nbsp;
+                        <input type="radio" id="Sex_Female" name="Sex" value="0" @(Model.Sex==0?"checked='checked'":"") />女生
+                    </td>
+                </tr>
+                <tr>
+                    <td class="Header">生日：</td>
+                    <td><input type="date" id="Birth" name="Birth" value="@Model.Birth" /></td>
+                </tr>
+            </table>
+        </div>
+        <div id="div2">
+            <table>
+                <tr>
+                    <td class="Header">住址：</td>
+                    <td><p><span class="Header">縣市：</span><select id="County" name="County">
+                            <option>--請選擇--</option>
+                           </select>&nbsp;&nbsp;
+                        <span class="Header">鄉鎮：</span><select id="Region" name="Region">
+                            <option>--請選擇--</option>
+                           </select></p>
+                        <span class="Header">地址：</span><input type="text" id="Address" name="Address" value="@Model.Address" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="Header">教育程度：</td>
+                    <td><select id="Edu" name="Edu">
+                            <option>--請選擇--</option>
+                            <option value="1" @(Model.Edu==1?"selected='selected'":"") >國小</option>
+                            <option value="2" @(Model.Edu==2?"selected='selected'":"")>國中</option>
+                            <option value="3" @(Model.Edu==3?"selected='selected'":"")>高中職</option>
+                            <option value="4" @(Model.Edu==4?"selected='selected'":"")>大專</option>
+                            <option value="5" @(Model.Edu==5?"selected='selected'":"")>研究所</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="Header">電子郵件：</td>
+                    <td><input type="email" required="required" id="Email" name="Email" value="@Model.Email" />
+                    </td>
+                </tr>                
+            </table>
+        </div>
+        <p><input type="submit" value="確定修改" />&nbsp;
+            <input type="reset" value="重新填寫" />
+        </p>
+        </form>  
+    </div>
+</body>
+</html>

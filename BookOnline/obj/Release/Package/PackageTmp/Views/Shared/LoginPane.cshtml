@@ -1,0 +1,30 @@
+﻿<style>
+    #MainTable {
+        width:400px;
+        margin-left:auto;
+        margin-right:auto;
+    }
+    #MainTable td {
+        padding:10px;
+    }
+    .Header {
+        font-weight:bold;
+        text-align:right;
+    }
+</style>
+<table id="MainTable">           
+    <tr>
+        <td class="Header">帳號：</td>
+        <td><input type="text" id="Account" name="Account" required="required" placeholder="請輸入帳號" /></td>
+    </tr>
+    <tr>
+        <td class="Header">密碼：</td>
+        <td><input type="password" id="Password" name="Password" required="required" placeholder="請輸入密碼" /></td>
+    </tr>
+    <tr>
+        <td colspan="2"  style="text-align:center">
+            <div style="color:red;font-weight:bold" id="ErrMsg">@ViewData["ErrMsg"]</div>
+            <input id="OKBtn" type="button" value="登入" style="width:100px;height:30px;" />
+        </td>
+    </tr>
+</table>

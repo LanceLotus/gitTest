@@ -1,0 +1,102 @@
+﻿@{
+    ViewBag.Title = "首頁";
+    Layout = "~/Views/Shared/MainLogin_layout.cshtml";
+}
+
+<h2>
+    <marquee onmouseover="this.stop()" onmouseout="this.start()">您是第&nbsp;@Html.Raw(ViewData["VisitCount"])&nbsp;光臨本站的訪客</marquee>
+</h2>
+<div class="nav-container" style="float: left; position: absolute;">
+    <ul class="nav">
+        <li class="Menu">
+            <span class="text">@Html.ActionLink("首頁", "Index", "Home")</span>
+        </li>
+        <li class="Menu">
+            <span class="text">@Html.ActionLink("加入會員", "AddNewMemberInfo", "NewMember")</span>
+        </li>
+        <li class="Menu">
+            <span class="text">@Html.ActionLink("會員登入", "Main", "Login")</span>
+        </li>
+        <li class="Menu">
+            <span class="text">@Html.ActionLink("會員專區", "Index", "Member")</span>
+        </li>
+        <li class="Menu">
+            <span class="text">@Html.ActionLink("Book管理", "Index", "Book")</span>
+        </li>
+        <li class="Menu">
+            <span class="text">@Html.ActionLink("忘記密碼", "ForgetPWD", "Login")</span>
+        </li>
+    </ul>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+@section CustomStyle
+{
+    <style>
+        body {
+            background-image:url("/images/BG/@ViewData["BG"]");
+        }
+        *{
+          box-sizing: border-box;
+        }
+        h1{
+          text-align:center;
+          letter-spacing:1px;
+          text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+        }
+        .nav-container{
+          width:250px;
+          margin-top:10px;
+          box-shadow: 0 2px 2px 2px lightgray;
+          transition: all 0.3s linear;
+        }
+        .nav{
+          list-style-type:none;
+          margin:0;
+          padding:0;
+        }
+        li{
+          height:50px; 
+          position:relative;
+        }
+        a {
+          border-top: 1px solid rgba(255,255,255,0.1);
+          border-bottom: 1px solid black;
+          text-decoration:none;
+          display:block;
+          height:100%;
+          width:100%;
+          line-height:50px;
+          text-transform: uppercase;
+          font-weight: bold;
+          padding-left:25%;
+          border-left:5px solid transparent;
+          letter-spacing:1px;
+          transition: all 0.3s linear;
+        }
+        .Menu a{
+            color: #1B1B1B;
+            border-left: 3px solid #959595;
+            background-color: #FCFCFC;
+        }
+        a:hover {
+            color: #FCFCFC;
+            border-left:5px solid #FF6600;
+            background-color: #FF9900;
+        }
+    </style>
+}

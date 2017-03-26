@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "會員專區";
+    Layout = "~/Views/Shared/MainLogin_layout.cshtml";
+}
+
+<h1>會員專區</h1>
+<h2>親愛的&nbsp;@Session["LoginName"]&nbsp;，您好！</h2>
+<p>&nbsp;</p>
+<p>@Html.ActionLink("修改會員資料", "ModifyMemberInfo")</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>@Html.ActionLink("書籍購買", "Main", "Shop")</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<form action="/Tool/GetDetail" method="post">
+    <input type="text" id="detailId" name="detailId" placeholder="請輸入查詢的訂單編號" />
+    <input type="submit" id="serchDetail" name="serchDetail" value="查詢" />
+</form>
